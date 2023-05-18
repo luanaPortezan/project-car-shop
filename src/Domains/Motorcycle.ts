@@ -1,5 +1,5 @@
 import IMotorcycle from '../Interfaces/IMotorcycle';
-import CategoryTypes from '../Middlewares/types.category';
+import CategoryTypes from '../utils/categoryTypes';
 import Vehicle from './Vehicle';
 
 class Motorcycle extends Vehicle {
@@ -12,7 +12,7 @@ class Motorcycle extends Vehicle {
     this.engineCapacity = motorcycle.engineCapacity;
   }
 
-  public getBuyCategory() {
+  public getBuycategory() {
     return this.category;
   }
   public setCategory(value: CategoryTypes) {
@@ -21,7 +21,7 @@ class Motorcycle extends Vehicle {
   public getEngineCapacity() {
     return this.engineCapacity;
   }
-  public setEngineCapacity(value: number) {
+  public setengineCapacity(value: number) {
     this.engineCapacity = value;
   }
 }

@@ -1,6 +1,6 @@
 import { Model, Schema, models, model, UpdateQuery } from 'mongoose';
 
-abstract class AbstractModelODM <T> {
+abstract class AbstractODM <T> {
   protected model: Model<T>;
   private schema: Schema;
   protected modelName: string;
@@ -29,4 +29,4 @@ abstract class AbstractModelODM <T> {
   }
 }
 
-export default AbstractModelODM;
+export default AbstractODM;

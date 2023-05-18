@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { ObjectId } from 'mongodb';
-import CarService from '../Services/Car.service';
+
+import CarService from '../Services/CarService';
 
 class CarController {
   private req: Request;
@@ -13,7 +14,10 @@ class CarController {
     this.res = res;
     this.next = next;
     this.service = new CarService();
-  }
+  } 
+
+  private InvalidMongoIdError = 'Invalid mongo id';
+  private CarNotFoundError = 'Car not found';
 
   private isValidId(id: string):boolean {
     try {
@@ -26,39 +30,34 @@ class CarController {
     return false;
   }
 
-  public async insertOneNewCar() {
+  public async insertOneCar() {
     const car = this.req.body;
 
     try {
-      const NewCarRegistre = await this.service.insertOneNewCar(car);
-      return this.res.status(201).json(NewCarRegistre);
+      const newCar = await this.service.insertOneCar(car);
+      return this.res.status(201).json(newCar);
     } catch (error) {
       this.next(error);
     }
   }
-
-  public async findAllCar() {
+  public async findAll() {
     try {
-      const carList = await this.service.findAllCar();
+      const carList = await this.service.findAll();
       return this.res.status(200).json(carList);
     } catch (error) {
       this.next(error);
     }
   }
-
-  private errorInvalidMongoDBId = 'Invalid mongo id';
-  private errorCarNotFuond = 'Car not found';
-
-  public async findByIdCar() {
+  public async findById() {
     const { id } = this.req.params;
     if (!this.isValidId(id)) {
-      return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
+      return this.res.status(422).json({ message: this.InvalidMongoIdError });
     }
 
     try {
-      const car = await this.service.findByIdCar(id);
+      const car = await this.service.findById(id);
       if (!car) {
-        return this.res.status(404).json({ message: this.errorCarNotFuond });
+        return this.res.status(404).json({ message: this.CarNotFoundError });
       }
       return this.res.status(200).json(car);
     } catch (error) {
@@ -66,18 +65,18 @@ class CarController {
     }
   }
 
-  public async updateByIdCar() {
+  public async updateById() {
     const { id } = this.req.params;
     if (!this.isValidId(id)) {
-      return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
+      return this.res.status(422).json({ message: this.InvalidMongoIdError });
     }
 
     try {
       const car = this.req.body;
-      const updatedCar = await this.service.updateOneCar(id, car);
-
+      const updatedCar = await this.service.updateOne(id, car);
+      
       if (!updatedCar) {
-        return this.res.status(404).json({ message: this.errorCarNotFuond });
+        return this.res.status(404).json({ message: this.CarNotFoundError });
       }
       return this.res.status(200).json(updatedCar);
     } catch (error) {
@@ -85,17 +84,17 @@ class CarController {
     }
   }
 
-  public async removeByIdCar() {
+  public async removeById() {
     const { id } = this.req.params;
 
     if (!this.isValidId(id)) {
-      return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
+      return this.res.status(422).json({ message: this.InvalidMongoIdError });
     }
 
     try {
-      const removeCar = await this.service.removeOneCar(id);
+      const removeCar = await this.service.removeOne(id);
       if (!removeCar) {
-        return this.res.status(404).json({ message: this.errorCarNotFuond });
+        return this.res.status(404).json({ message: this.CarNotFoundError });
       }
       return this.res.sendStatus(204);
     } catch (error) {

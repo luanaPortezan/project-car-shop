@@ -1,4 +1,4 @@
-import CategoryTypes from '../Middlewares/types.category';
+import CategoryTypes from '../utils/categoryTypes';
 import IVehicle from './IVehicle';
 
 interface IMotorcycle extends IVehicle {

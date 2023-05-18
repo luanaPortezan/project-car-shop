@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ObjectId } from 'mongodb';
-import MotorcycleService from '../Services/Motorcycle.service';
+import MotorcycleService from '../Services/MotorcycleService';
 
 class MotorcycleController {
   private req: Request;
@@ -17,7 +17,7 @@ class MotorcycleController {
 
   private InvalidMongoIdError = 'Invalid mongo id';
   private MotorcycleNotFoundError = 'Motorcycle not found';
-
+  
   private isValidId(id: string):boolean {
     try {
       if (new ObjectId(id).toString() === id) {
@@ -29,32 +29,32 @@ class MotorcycleController {
     return false;
   }
 
-  public async insertOneNewMotorcycle() {
+  public async insertOneMotorcycle() {
     const motorcycle = this.req.body;
 
     try {
-      const newMotorcycle = await this.service.insertOneNewMotorcycle(motorcycle);
+      const newMotorcycle = await this.service.insertOneMotorcycle(motorcycle);
       return this.res.status(201).json(newMotorcycle);
     } catch (error) {
       this.next(error);
     }
   }
-  public async findAllMotorcycle() {
+  public async findAll() {
     try {
-      const motorcycleAllList = await this.service.findAllMotorcycle();
-      return this.res.status(200).json(motorcycleAllList);
+      const motorcycleList = await this.service.findAll();
+      return this.res.status(200).json(motorcycleList);
     } catch (error) {
       this.next(error);
     }
   }
-  public async findByIdMotorcycle() {
+  public async findById() {
     const { id } = this.req.params;
     if (!this.isValidId(id)) {
       return this.res.status(422).json({ message: this.InvalidMongoIdError });
     }
 
     try {
-      const motorcycle = await this.service.findByIdMotorcycle(id);
+      const motorcycle = await this.service.findById(id);
       if (!motorcycle) {
         return this.res.status(404).json({ message: this.MotorcycleNotFoundError });
       }
@@ -64,7 +64,7 @@ class MotorcycleController {
     }
   }
 
-  public async updateByIdMotorcycle() {
+  public async updateById() {
     const { id } = this.req.params;
     if (!this.isValidId(id)) {
       return this.res.status(422).json({ message: this.InvalidMongoIdError });
@@ -72,7 +72,7 @@ class MotorcycleController {
 
     try {
       const motorcycle = this.req.body;
-      const updateMotorcycle = await this.service.updateOneMotorcycle(id, motorcycle);
+      const updateMotorcycle = await this.service.updateOne(id, motorcycle);
 
       if (!updateMotorcycle) {
         return this.res.status(404).json({ message: this.MotorcycleNotFoundError });
@@ -82,7 +82,7 @@ class MotorcycleController {
       this.next(error);
     }
   }
-  public async removeByIdMotorcycle() {
+  public async removeById() {
     const { id } = this.req.params;
 
     if (!this.isValidId(id)) {
@@ -90,8 +90,8 @@ class MotorcycleController {
     }
 
     try {
-      const removeMotorcycle = await this.service.removeOneMotorcycle(id);
-      if (!removeMotorcycle) {
+      const removeCar = await this.service.removeOne(id);
+      if (!removeCar) {
         return this.res.status(404).json({ message: this.MotorcycleNotFoundError });
       }
       return this.res.sendStatus(204);
