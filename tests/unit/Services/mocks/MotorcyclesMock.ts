@@ -1,4 +1,4 @@
-import CategoryTypes from '../../../../src/utils/categoryTypes';
+import CategoryTypes from '../../../../src/Middlewares/CategoryTypes';
 
 const modelNameOne = 'Honda Cb 600f Hornet';
 const modelNameTwo = 'Honda Cb';

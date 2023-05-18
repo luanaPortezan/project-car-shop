@@ -1,5 +1,5 @@
 import IMotorcycle from '../Interfaces/IMotorcycle';
-import CategoryTypes from '../utils/categoryTypes';
+import CategoryTypes from '../Middlewares/CategoryTypes';
 import Vehicle from './Vehicle';
 
 class Motorcycle extends Vehicle {
