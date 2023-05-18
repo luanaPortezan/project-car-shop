@@ -16,8 +16,13 @@ class CarService {
 
   public async insertOneNewCar(car: ICar): Promise<Car | undefined> {
     const result = await this.carODM.create(car);
-
     return this.createCarDomain(result);
+  }
+  
+  public async findAll(): Promise<(Car | undefined)[] | undefined> {
+    const result = await this.carODM.findAll();
+    const carList = result?.map((car) => this.createCarDomain(car));
+    return carList;
   }
 }
 export default CarService;
