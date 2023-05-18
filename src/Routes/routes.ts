@@ -15,4 +15,10 @@ routes.get(
     new CarController(req, res, next)
       .findAllCar(),
 );
+routes.get(
+  '/cars/:id',
+  (req, res, next) =>
+    new CarController(req, res, next)
+      .findByIdCar(),
+);
 export default routes;
