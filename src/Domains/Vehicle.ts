@@ -20,6 +20,7 @@ class Vehicle {
   public getId() {
     return this.id;
   }
+
   public setId(id: string) {
     this.id = id;
   }
@@ -27,6 +28,7 @@ class Vehicle {
   public getModel() {
     return this.model;
   }
+
   public setModel(value: string) {
     this.model = value;
   }
@@ -34,6 +36,7 @@ class Vehicle {
   public getYear() {
     return this.year;
   }
+
   public setYear(value: number) {
     this.year = value;
   }
@@ -41,6 +44,7 @@ class Vehicle {
   public getColor() {
     return this.color;
   }
+
   public setColor(value: string) {
     this.color = value;
   }
@@ -48,6 +52,7 @@ class Vehicle {
   public getStatus() {
     return this.status;
   }
+
   public setStatus(value: boolean) {
     this.status = value;
   }
@@ -55,9 +60,9 @@ class Vehicle {
   public getBuyValue() {
     return this.buyValue;
   }
+
   public setBuyValue(value: number) {
     this.buyValue = value;
   }
 }
-
 export default Vehicle;

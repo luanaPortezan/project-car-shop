@@ -15,15 +15,17 @@ class Motorcycle extends Vehicle {
   public getBuycategory() {
     return this.category;
   }
+
   public setCategory(value: CategoryTypes) {
     this.category = value;
   }
+
   public getEngineCapacity() {
     return this.engineCapacity;
   }
+
   public setengineCapacity(value: number) {
     this.engineCapacity = value;
   }
 }
-
 export default Motorcycle;
