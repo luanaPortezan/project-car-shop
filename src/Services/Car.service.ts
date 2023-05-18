@@ -14,7 +14,7 @@ class CarService {
     }
   }
 
-  public async insertOneCar(car: ICar): Promise<Car | undefined> {
+  public async insertOneNewCar(car: ICar): Promise<Car | undefined> {
     const result = await this.carODM.create(car);
 
     return this.createCarDomain(result);
