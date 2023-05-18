@@ -20,9 +20,14 @@ class CarService {
   }
 
   public async findAllCar(): Promise<(Car | undefined)[] | undefined> {
-    const result = await this.carODM.findAll();
-    const carList = result?.map((car) => this.createCarDomain(car));
-    return carList;
+    const results = await this.carODM.findAll();
+    const carAllList = results?.map((car) => this.createCarDomain(car));
+    return carAllList;
+  }
+
+  public async findByIdCar(id: string): Promise <Car | undefined> {
+    const result = await this.carODM.findById(id);
+    return this.createCarDomain(result);
   }
 }
 export default CarService;
