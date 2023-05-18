@@ -114,9 +114,9 @@ class MotorcycleController {
         });
     }
     try {
-      const removeCar = await
+      const removeMotorcycle = await
       this.service.removeOne(id);
-      if (!removeCar) {
+      if (!removeMotorcycle) {
         return this.res
           .status(404).json({
             message: this.MotorcycleNotFoundError,
