@@ -84,6 +84,24 @@ class CarController {
       this.next(error);
     }
   }
+
+  public async removeByIdCar() {
+    const { id } = this.req.params;
+
+    if (!this.isValidId(id)) {
+      return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
+    }
+
+    try {
+      const removeCar = await this.service.removeOneCar(id);
+      if (!removeCar) {
+        return this.res.status(404).json({ message: this.errorCarNotFuond });
+      }
+      return this.res.sendStatus(204);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }
 
 export default CarController;
