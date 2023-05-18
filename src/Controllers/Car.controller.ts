@@ -65,6 +65,25 @@ class CarController {
       this.next(error);
     }
   }
+
+  public async updateById() {
+    const { id } = this.req.params;
+    if (!this.isValidId(id)) {
+      return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
+    }
+
+    try {
+      const car = this.req.body;
+      const updatedCar = await this.service.updateOne(id, car);
+
+      if (!updatedCar) {
+        return this.res.status(404).json({ message: this.errorCarNotFuond });
+      }
+      return this.res.status(200).json(updatedCar);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }
 
 export default CarController;
