@@ -30,7 +30,7 @@ class CarService {
     return this.createCarDomain(result);
   }
 
-  public async updateOne(id: string, car: ICar):Promise <Car | undefined> {
+  public async updateOneCar(id: string, car: ICar):Promise <Car | undefined> {
     const updated = await this.carODM.update(id, car);
     return this.createCarDomain(updated);
   }

@@ -66,7 +66,7 @@ class CarController {
     }
   }
 
-  public async updateById() {
+  public async updateByIdCar() {
     const { id } = this.req.params;
     if (!this.isValidId(id)) {
       return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
@@ -74,7 +74,7 @@ class CarController {
 
     try {
       const car = this.req.body;
-      const updatedCar = await this.service.updateOne(id, car);
+      const updatedCar = await this.service.updateOneCar(id, car);
 
       if (!updatedCar) {
         return this.res.status(404).json({ message: this.errorCarNotFuond });
