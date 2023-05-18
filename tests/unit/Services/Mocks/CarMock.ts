@@ -30,6 +30,7 @@ export const newCarUpdatedMongoResponse = {
   id: '6448542ef7475359162577f1',
   __v: 0,
 };
+
 export const newCarMongoResponse = {
   model: 'Marea',
   year: 2002,
@@ -89,7 +90,6 @@ export const carListGetResponse = [
     seatsQty: 5,
     status: true,
   },
-
   {
     id: '6448578e4bd27d324f4f8d46',
     model: 'Gol',

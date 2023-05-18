@@ -11,7 +11,7 @@ import {
   newMotorCyclesPost,
   newMotorCyclesPostResponse, 
   newMotorCyclesUpdatedPost,
-} from './mocks/MotorcyclesMock';
+} from './Mocks/MotorcyclesMock';
 
 describe('Test MotorcycleService', function () {
   afterEach(function () {

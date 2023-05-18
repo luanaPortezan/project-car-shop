@@ -12,6 +12,7 @@ export const newMotorCyclesPost = {
   category: 'Street' as CategoryTypes,
   engineCapacity: 600,
 };
+
 export const newMotorCyclesUpdatedPost = {
   model: modelNameOne,
   year: 2010,
@@ -34,7 +35,7 @@ export const newMotorCyclesMongoUpdatedResponse = {
   id: '6348513f34c397abcad040b2',
   __v: 0,
 };
-  
+
 export const newMotorCyclesMongoResponse = {
   model: modelNameOne,
   year: 2005,
@@ -46,7 +47,7 @@ export const newMotorCyclesMongoResponse = {
   id: '6348513f34c397abcad040b2',
   __v: 0,
 };
-  
+
 export const newMotorCyclesPostResponse = {
   id: '6348513f34c397abcad040b2',
   model: modelNameOne,
@@ -57,7 +58,7 @@ export const newMotorCyclesPostResponse = {
   category: 'Street' as CategoryTypes,
   engineCapacity: 600,
 };
-  
+
 export const MotorCyclesListMongoResponse = [
   {
     model: modelNameOne,
@@ -82,7 +83,7 @@ export const MotorCyclesListMongoResponse = [
     __v: 0,
   },
 ];
-  
+
 export const MotorCyclesListGetResponse = [
   {
     model: modelNameOne,
@@ -93,7 +94,6 @@ export const MotorCyclesListGetResponse = [
     category: 'Street' as CategoryTypes,
     engineCapacity: 600,
     id: '6348513f34c397abcad040b2',
-   
   },
   {
     model: modelNameTwo,
@@ -104,6 +104,5 @@ export const MotorCyclesListGetResponse = [
     category: 'Street' as CategoryTypes,
     engineCapacity: 600,
     id: '6348513f34c397abcad040h4',
-  
   },
 ];

@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import { Model } from 'mongoose';
 import { carListGetResponse, carListMongoResponse, 
   newCarMongoResponse, newCarPost, newCarPostResponse, 
-  newCarUpdatedMongoResponse, newCarUpdatedPost } from './mocks/CarMock';
+  newCarUpdatedMongoResponse, newCarUpdatedPost } from './Mocks/CarMock';
 import CarService from '../../../src/Services/CarService';
 
 describe('Test CarService', function () {
