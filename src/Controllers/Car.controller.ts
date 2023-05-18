@@ -45,6 +45,26 @@ class CarController {
       this.next(error);
     }
   }
+
+  private errorInvalidMongoDBId = 'Invalid mongo id';
+  private errorCarNotFuond = 'Car not found';
+
+  public async findByIdCar() {
+    const { id } = this.req.params;
+    if (!this.isValidId(id)) {
+      return this.res.status(422).json({ message: this.errorInvalidMongoDBId });
+    }
+
+    try {
+      const car = await this.service.findByIdCar(id);
+      if (!car) {
+        return this.res.status(404).json({ message: this.errorCarNotFuond });
+      }
+      return this.res.status(200).json(car);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }
 
 export default CarController;
