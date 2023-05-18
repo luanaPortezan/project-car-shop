@@ -18,8 +18,8 @@ class CarService {
     const result = await this.carODM.create(car);
     return this.createCarDomain(result);
   }
-  
-  public async findAll(): Promise<(Car | undefined)[] | undefined> {
+
+  public async findAllCar(): Promise<(Car | undefined)[] | undefined> {
     const result = await this.carODM.findAll();
     const carList = result?.map((car) => this.createCarDomain(car));
     return carList;
