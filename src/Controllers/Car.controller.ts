@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import { ObjectId } from 'mongodb';
 import CarService from '../Services/Car.service';
 
 class CarController {
@@ -12,6 +13,17 @@ class CarController {
     this.res = res;
     this.next = next;
     this.service = new CarService();
+  }
+
+  private isValidId(id: string):boolean {
+    try {
+      if (new ObjectId(id).toString() === id) {
+        return true;
+      }
+    } catch (error) {
+      return false;
+    }
+    return false;
   }
 
   public async insertOneNewCar() {
