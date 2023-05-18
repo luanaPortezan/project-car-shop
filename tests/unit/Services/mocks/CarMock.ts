@@ -8,6 +8,28 @@ export const newCarPost = {
   seatsQty: 5,
 };
 
+export const newCarUpdatedPost = {
+  model: 'Marea',
+  year: 2003,
+  color: 'Black',
+  status: true,
+  buyValue: 12.990,
+  doorsQty: 4,
+  seatsQty: 5,
+  id: '6448542ef7475359162577f1',
+};
+
+export const newCarUpdatedMongoResponse = {
+  model: 'Marea',
+  year: 2003,
+  color: 'Black',
+  status: true,
+  buyValue: 12.990,
+  doorsQty: 4,
+  seatsQty: 5,
+  id: '6448542ef7475359162577f1',
+  __v: 0,
+};
 export const newCarMongoResponse = {
   model: 'Marea',
   year: 2002,
@@ -67,6 +89,7 @@ export const carListGetResponse = [
     seatsQty: 5,
     status: true,
   },
+
   {
     id: '6448578e4bd27d324f4f8d46',
     model: 'Gol',
@@ -78,26 +101,3 @@ export const carListGetResponse = [
     status: true,
   },
 ];
-
-export const newCarUpdatedPost = {
-  model: 'Marea',
-  year: 2003,
-  color: 'Black',
-  status: true,
-  buyValue: 12.990,
-  doorsQty: 4,
-  seatsQty: 5,
-  id: '6448542ef7475359162577f1',
-};
-
-export const newCarUpdatedMongoResponse = {
-  model: 'Marea',
-  year: 2003,
-  color: 'Black',
-  status: true,
-  buyValue: 12.990,
-  doorsQty: 4,
-  seatsQty: 5,
-  id: '6448542ef7475359162577f1',
-  __v: 0,
-};
