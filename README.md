@@ -17,22 +17,22 @@ Car Shop is a web application that simulates a vehicle buying and selling system
 
 The **Car Shop** project aims to simplify the car purchasing process for both customers and dealership administrators. The web application provides an intuitive and user-friendly interface for customers to browse available cars, view detailed information, and make purchases. On the admin side, the application offers tools for managing inventory, adding new cars, updating prices, and monitoring sales.
 
-## Features
+## Functionalities
 
-- **User-Friendly Interface:** The application provides an easy-to-use interface for customers to browse cars, view specifications, and make purchases with just a few clicks.
-- **Car Listings:** Customers can view a comprehensive list of available cars, including details such as make, model, year, price, and more.
-- **Car Details:** Detailed information is provided for each car, including images, specifications, mileage, and a brief description.
-- **Search and Filtering:** Customers can search for specific cars based on criteria such as make, model, price range, and more. Filtering options help narrow down the search results.
-- **Secure Checkout:** The application ensures a secure and seamless checkout process, allowing customers to purchase cars with confidence.
-- **Inventory Management:** Dealership administrators have access to a dashboard where they can manage the inventory, add new cars, update prices, and monitor sales.
-- **Sales Analytics:** The application provides insights and analytics on sales, including revenue, top-selling models, and other metrics.
+The project has the following features:
+
+- Visualization of vehicles available for sale;
+- Vehicle details including make, model, year and price;
+- Adding vehicles to the shopping cart;
+- Calculation of the total purchase price;
+- Checkout, including filling in buyer information;
+- History of purchases made.
 
 ## Technologies Used
 
 The following technologies and tools were used in the development of the **Car Shop** project:
 
-- **Frontend:** HTML, CSS, JavaScript, React.js, Redux, Bootstrap
-- **Backend:** Node.js, Express.js, MongoDB
+- **Backend:** Node.js, Express.js, MongoDB, Typescript
 - **Authentication:** JSON Web Tokens (JWT)
 
 ## Getting Started
