@@ -1,6 +1,6 @@
 # Project Car Shop
 
-Welcome to the Recipe App Project repository! This project was developed as part of the Trybe course, a web development school, as a way to practice the concepts learned throughout the course.
+Welcome to the Car Shop Project repository! This project was developed as part of the Trybe course, a web development school, as a way to practice the concepts learned throughout the course.
 
 Car Shop is a web application that simulates a vehicle buying and selling system. With this application, users can view cars available for sale, add vehicles to the shopping cart, complete the purchase and obtain detailed information about each vehicle.
 
