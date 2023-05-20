@@ -34,9 +34,6 @@ The following technologies and tools were used in the development of the **Car S
 - **Frontend:** HTML, CSS, JavaScript, React.js, Redux, Bootstrap
 - **Backend:** Node.js, Express.js, MongoDB
 - **Authentication:** JSON Web Tokens (JWT)
-- **Payment Processing:** Stripe
-- **Image Hosting:** Cloudinary
-- **Deployment:** Heroku
 
 ## Getting Started
 
