@@ -2,7 +2,7 @@
 
 Welcome to the Recipe App Project repository! This project was developed as part of the Trybe course, a web development school, as a way to practice the concepts learned throughout the course.
 
-This is a repository for the **Car Shop** project, a web application designed to manage a car dealership's inventory and provide an intuitive interface for customers to browse and purchase cars. The project is built using modern web development technologies, ensuring a seamless user experience and efficient inventory management.
+Car Shop is a web application that simulates a vehicle buying and selling system. With this application, users can view cars available for sale, add vehicles to the shopping cart, complete the purchase and obtain detailed information about each vehicle.
 
 ## Table of Contents
 
@@ -79,5 +79,5 @@ To get a local copy of the **Car Shop** project up and running on your machine, 
 If you have any questions or suggestions regarding this project, please feel free to contact:
 
 - Luana Portezan
-- Email: luana.portezan@example.com
-- LinkedIn: [luana-portezan](https://www.linkedin.com/in/luana-portezan)
+- Email: luanaportezan@gmail.com
+- LinkedIn: [luanaportezan](https://www.linkedin.com/in/luanaportezan)
